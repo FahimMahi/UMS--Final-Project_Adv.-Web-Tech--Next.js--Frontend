@@ -1,0 +1,74 @@
+.navbar {
+  background-color: #282c34; /* Dark shade for a modern look */
+  padding: 20px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbarBrand {
+  font-size: 1.8rem;
+  color: #61dafb; /* Bright blue, similar to React's brand color for a striking contrast */
+  text-decoration: none;
+}
+
+.collapse {
+  display: flex;
+  align-items: center;
+}
+
+.navbarNav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+.navitem {
+  padding: 10px 15px;
+  margin: 0 5px; /* Adding horizontal margin for better separation */
+  color: #ffffff; /* High contrast for readability */
+  text-decoration: none;
+
+  &:hover {
+    background-color: #4a90e2; /* Vibrant blue for hover, enhancing interaction feedback */
+    border-radius: 5px; /* Rounded corners for hover effect */
+  }
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .collapse {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .navbarNav {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #282c34; /* Consistent with the navbar color */
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for a layered effect */
+  }
+
+  .navitem {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+
+    &:hover {
+      background-color: #4a90e2; /* Consistent hover effect */
+      border-radius: 0; /* Remove border-radius in mobile view for a cleaner look */
+    }
+  }
+}
