@@ -114,7 +114,7 @@ const StudentList: React.FC = () => {
               <th scope="col" className="py-3 px-6">Email</th>
               <th scope="col" className="py-3 px-6">Address</th>
               <th scope="col" className="py-3 px-6">Phone Number</th>
-              <th scope="col" className="py-3 px-6">Major</th>
+              <th scope="col" className="py-3 px-6">Department</th>
               <th scope="col" className="py-3 px-6">GPA</th>
               <th scope="col" className="py-3 px-6">DOB</th>
               <th scope="col" className="py-3 px-6">Enrollment Date</th>
@@ -139,8 +139,12 @@ const StudentList: React.FC = () => {
                 <td className="py-4 px-6">{student.enrollmentDate}</td>
                 <td className="py-4 px-6">{student.graduationDate}</td>
                 <td className="py-4 px-6">
-                  <button onClick={() => handleEdit(student.id)} className="text-indigo-600 hover:text-indigo-900">Edit</button>
-                  <button onClick={() => handleDelete(student.id)} className="text-red-600 hover:text-red-900 ml-4">Delete</button>
+                <button onClick={() => handleEdit(student.id)} className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 shadow-md transition duration-300">
+                  Edit
+                </button>
+                <button onClick={() => handleDelete(student.id)} className="px-4 py-2 ml-4 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 shadow-md transition duration-300">
+                  Delete
+                </button>
                 </td>
               </tr>
             ))}

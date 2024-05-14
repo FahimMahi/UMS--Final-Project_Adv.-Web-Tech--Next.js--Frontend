@@ -11,7 +11,7 @@ interface FormData {
     email: string;
     address: string;
     phoneNumber: string;
-    // major: string;
+    major: string;
     password: string;
     profilepic: File | null;
     fathersname: string;
@@ -31,7 +31,7 @@ export default function AddStudent() {
         email: '',
         address: '',
         phoneNumber: '',
-        // major: '',
+        major: '',
         password:'',
         profilepic: null,
         fathersname: '',
@@ -71,7 +71,7 @@ export default function AddStudent() {
             formDataObject.append('email', formData.email);
             formDataObject.append('address', formData.address);
             formDataObject.append('phoneNumber', formData.phoneNumber);
-            // formDataObject.append('major', formData.major);
+            formDataObject.append('major', formData.major);
             formDataObject.append('password', formData.password);
             if (formData.profilepic) {
             formDataObject.append('profilepic', formData.profilepic);
@@ -143,9 +143,9 @@ export default function AddStudent() {
         errors.phoneNumber = 'Invalid phone number format. Phone number should be 11 digits starting with 01';
       }
 
-    // if (!formData.major) {
-    //     errors.major = 'Major is required';
-    // }
+    if (!formData.major) {
+        errors.major = 'Major is required';
+    }
 
     if (!formData.password) {
         errors.password = 'Password is required';
@@ -216,12 +216,12 @@ export default function AddStudent() {
         className="bg-gray-700 text-gray-100 border border-gray-600 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-500" />
         {errors.phoneNumber && <p className="text-red-400 text-xs italic">{errors.phoneNumber}</p>}
     </div>
-    {/* <div className="mb-4">
-        <label htmlFor="major" className="block text-gray-200 font-bold mb-2">Major</label>
+    <div className="mb-4">
+        <label htmlFor="major" className="block text-gray-200 font-bold mb-2">Department</label>
         <input type="text" id="major" name="major" value={formData.major} onChange={handleInputChange} 
         className="bg-gray-700 text-gray-100 border border-gray-600 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-500" />
         {errors.major && <p className="text-red-400 text-xs italic">{errors.major}</p>}
-    </div> */}
+    </div>
     <div className="mb-4">
         <label htmlFor="password" className="block text-gray-200 font-bold mb-2">Password</label>
         <input type="password" id="password" name="password" value={formData.password} onChange={handleInputChange} 

@@ -161,6 +161,9 @@ export default function AdminDashboard() {
           <a href="/admin/studentlist" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300">
             Student List
           </a>
+          <a href="/admin/stafflist" className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+            Staff List
+          </a>
           <a href="/admin/deptlist" className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded transition duration-300">
             Department List
           </a>

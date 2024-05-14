@@ -53,9 +53,9 @@ export default function Navbar() {
                 {/* <li className={styles.navitem}>
                   <Link href="/admin/stafflist">Staff List</Link>
                 </li> */}
-                <li className={styles.navitem}>
+                {/* <li className={styles.navitem}>
                   <Link href="/admin/deptlist">Dept. List</Link>
-                </li>
+                </li> */}
                 <li className={styles.navitem}>
                   <Link href="/admin/courselist">Course List</Link>
                 </li>
@@ -64,6 +64,9 @@ export default function Navbar() {
                 </li>
               </>
             )}
+            <li className={styles.navitem}>
+              <Link href="/admin/aboutus">About Us</Link>
+            </li>
             <li className={styles.navitem}>
               {isLoggedIn ? <Logout /> : <Link href="/admin/adminlogin">Login</Link>}
             </li>

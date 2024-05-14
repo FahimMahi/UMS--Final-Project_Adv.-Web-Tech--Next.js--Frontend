@@ -58,20 +58,23 @@ const EditAdminProfile: React.FC = () => {
     e.preventDefault();
     if (!admin) return;
 
-    if (typeof window !== 'undefined') {
-      const urlSegments = window.location.pathname.split('/');
-      const id = urlSegments[urlSegments.length - 1]; // Repeat the ID retrieval at this point
+    console.log("Submitting admin data:", admin); // Add this line to log the admin data
 
-      try {
-        await axios.put(`http://localhost:3000/admin/updateadmin/${id}`, admin);
-        toast.success('Admin updated successfully!');
-        router.push('/admin/adminlist');
-      } catch (error) {
-        console.error("Error updating admin:", error);
-        toast.error('Failed to update admin.');
-      }
+    if (typeof window !== 'undefined') {
+        const urlSegments = window.location.pathname.split('/');
+        const id = urlSegments[urlSegments.length - 1];
+
+        try {
+            await axios.put(`http://localhost:3000/admin/updateadmin/${id}`, admin);
+            toast.success('Admin updated successfully!');
+            router.push('/admin/adminlist');
+        } catch (error) {
+            console.error("Error updating admin:", error);
+            toast.error('Failed to update admin.');
+        }
     }
-  };
+};
+
 
   if (!admin) return <p>Loading...</p>;
 
@@ -83,39 +86,39 @@ const EditAdminProfile: React.FC = () => {
         {/* Example for one input field */}
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Name</label>
-          <input type="text" id="name" name="name" value={admin.name} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
+          <input type="text" id="name" name="name" value={admin.name} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  />
         </div>
         <div className="mb-4">
           <label htmlFor="username" className="block text-gray-700 text-sm font-bold mb-2">Username</label>
-          <input type="text" id="username" name="username" value={admin.username} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
+          <input type="text" id="username" name="username" value={admin.username} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  />
         </div>
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
-          <input type="email" id="email" name="email" value={admin.email} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
+          <input type="email" id="email" name="email" value={admin.email} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  />
         </div>
         <div className="mb-4">
           <label htmlFor="designation" className="block text-gray-700 text-sm font-bold mb-2">Designation</label>
-          <input type="text" id="designation" name="designation" value={admin.designation} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
+          <input type="text" id="designation" name="designation" value={admin.designation} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  />
         </div>
         <div className="mb-4">
           <label htmlFor="address" className="block text-gray-700 text-sm font-bold mb-2">Address</label>
-          <textarea id="address" name="address" value={admin.address} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+          <textarea id="address" name="address" value={admin.address} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ></textarea>
         </div>
         <div className="mb-4">
           <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">Password</label>
-          <input type="password" id="password" name="password" value={admin.password} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
+          <input type="password" id="password" name="password" value={admin.password} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  />
         </div>
         <div className="mb-4">
           <label htmlFor="nid" className="block text-gray-700 text-sm font-bold mb-2">NID</label>
-          <input type="text" id="nid" name="nid" value={admin.nid} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
+          <input type="text" id="nid" name="nid" value={admin.nid} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  />
         </div>
         <div className="mb-4">
           <label htmlFor="phoneNumber" className="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
-          <input type="text" id="phoneNumber" name="phoneNumber" value={admin.phoneNumber} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
+          <input type="text" id="phoneNumber" name="phoneNumber" value={admin.phoneNumber} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  />
         </div>
         <div className="mb-4">
           <label htmlFor="dob" className="block text-gray-700 text-sm font-bold mb-2">Date of Birth</label>
-          <input type="date" id="dob" name="dob" value={admin.dob} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required />
+          <input type="date" id="dob" name="dob" value={admin.dob} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  />
         </div>
         <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Update Admin
